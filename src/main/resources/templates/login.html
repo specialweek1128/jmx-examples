@@ -1,0 +1,24 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>JMS Examples</title>
+        <style>
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>ログイン画面</h1>
+        <hr>
+        <p th:if="${validationError}" th:text="${validationError}">validation error</p>
+        <form role="form" action="/login" th:action="@{/login}" th:object="${loginForm}" method="post">
+            ログインID：<input type="number" id="loginId" name="loginId" th:field="*{loginId}" />
+            パスワード：<input type="password" id="loginPasswd" name="loginPasswd" th:field="*{loginPasswd}" />
+            <button type="submit">ログイン</button>
+        </form>
+    </body>
+</html>
