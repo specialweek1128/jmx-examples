@@ -159,7 +159,7 @@ public class ProcessMonitor {
         String portStr = cl.getOptionValue("p", "5000");
         int portNum = Integer.parseInt(portStr);
 
-        // デフォルトのURL：service:jmx:rmi:///jndi/rmi://localhost:9999/jmxrmi
+        // デフォルトのURL：service:jmx:rmi:///jndi/rmi://localhost:5000/jmxrmi
         StringBuilder builder = new StringBuilder("service:jmx:rmi:///jndi/rmi://");
         builder.append(hostName).append(":").append(portNum).append("/jmxrmi");
 
